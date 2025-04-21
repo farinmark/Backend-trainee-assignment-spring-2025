@@ -1,0 +1,17 @@
+syntax = "proto3";
+package proto;
+option go_package = "github.com/farinmark/Backend-trainee-assignment-spring-2025/proto;proto";
+
+service PVZService {
+  rpc ListPVZ (Empty) returns (PVZList) {}
+}
+
+message Empty {}
+message PVZ {
+  int64 id = 1;
+  string city = 2;
+  string registered_at = 3;
+}
+message PVZList {
+  repeated PVZ pvzs = 1;
+}
